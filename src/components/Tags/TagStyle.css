@@ -1,0 +1,11 @@
+.tags:hover {
+    background-color: #E6E6E6;
+}
+.tags.active {
+    color: white;
+    background-color: #0F0F0F;
+
+}
+.open {
+    display: block;
+}
