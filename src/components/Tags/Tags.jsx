@@ -30,12 +30,12 @@ const Tags = () => {
     }
 
     return (
-        <div className={`overflow-x-auto  w-full`}>
+        <div className={`flex overflow-x-scroll  w-full`}>
             {keywords.map((value) => (
                 <span
                     key={value}
                     onClick={() => handleClick(value)}
-                    className={`tags inline-flex items-center justify-center text-[14px] h-[32px] rounded-[8px] outline-0 cursor-pointer m-[7px] bg-[#F2F2F2] font-[580] px-4 py-2 ${activeElement === value ? 'active' : ''}`}
+                    className={`tags flex-none items-center justify-center text-[14px] h-[32px] rounded-[8px] outline-0 cursor-pointer m-[7px] bg-[#F2F2F2] font-[580] px-4 py-2 ${activeElement === value ? 'active' : ''}`}
                 >
                     {value}
                 </span>

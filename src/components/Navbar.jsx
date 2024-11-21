@@ -1,9 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function Navbar({ toggleSidebar }) {
 
+  const [searchQuery, setSearchQuery] = useState("")
+  const navigate = useNavigate()
+
+  const searchQueryHandle = (event) => {
+    if((event.key === "Enter" || event === "searchButton") && searchQuery.length > 0) {
+      navigate(`search/${searchQuery}`)
+      setSearchQuery("")
+    }
+  }
 
   return (
     <section className='my-2 px-[16px] overflow-auto '>
@@ -25,10 +34,14 @@ function Navbar({ toggleSidebar }) {
           <div className='nav-center w-[732px] grid grid-cols-[640px_40px] justify-end items-center'>
             <div className='h-[40px] w-[100%] grid grid-cols-[auto_64px] justify-end items-center'>
               <div className='grid w-[514px] h-[100%] grid-cols-[auto] items-center border-2 border-r-0 rounded-[40px_0px_0px_40px] overflow-hidden'>
-                <input type='text' placeholder='Search' className='w-[100%] h-[100%] bg-transparent border-none pl-5 outline-none text-sm' />
+                <input type='text' placeholder='Search' className='w-[100%] h-[100%] bg-transparent border-none pl-5 outline-none text-sm' 
+                onChange={(e) => setSearchQuery (e.target.value)}
+                onKeyUp={searchQueryHandle}
+                value={searchQuery}
+                />
               </div>
               <div className='flex h-[100%] w-[100%] items-center justify-center bg-[#F8F8F8] border-2  rounded-[0px_40px_40px_0px] hover:bg-[#F2F2F2] cursor-pointer'>
-                <button>
+                <button onClick={() => searchQueryHandle("searchButton")}>
                   <img src='/images/yticon/search.svg' className='w-[20px] h-[20px] justify-items-center ' />
                 </button>
               </div>

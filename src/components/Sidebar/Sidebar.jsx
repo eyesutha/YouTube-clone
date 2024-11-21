@@ -58,7 +58,7 @@ const Sidebar = ({ isOpen }) => {
                 <p>Tracking</p>
               </div>
               <div className='side-link'>
-                <img src='https://yt3.ggpht.com/EYjt7WXEgKfe8no8gIz7Cn1yHd9VKOpbLJRIFRDHEOMBdiTUxV8ZKVOjGxeZezo3x4rRCTm5=s88-c-k-c0x00ffffff-no-rj'
+                <img src='https://yt3.ggpht.com/th3n59teuGw-yBg-wugUjj67ppzug9tW2WogClVUtawyz7qZBq0TDavkOZ7Oc_Z07yfwN9f5=s88-c-k-c0x00ffffff-no-rj'
                   className='rounded-full' /><p>NCT</p>
               </div>
               <div className='side-link'>
